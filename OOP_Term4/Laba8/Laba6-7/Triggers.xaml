@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Мультитриггер-->
+    <Style x:Key="MultiTriggerStyle" TargetType="{x:Type TextBox}">
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                    <Condition Property="IsFocused" Value="True"/>
+                </MultiTrigger.Conditions>
+
+                <MultiTrigger.Setters>
+                    <Setter Property="Border.Effect">
+                        <Setter.Value>
+                            <DropShadowEffect ShadowDepth="0"
+                                              Color="#FD4EFF"
+                                              Opacity="1"/>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Триггер данных-->
+    <Style x:Key="DataTriggerStyle" TargetType="{x:Type TextBlock}">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=RateSlider, Path=Value}" Value="1">
+                <Setter Property="Background" Value="#ff4545"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=RateSlider, Path=Value}" Value="2">
+                <Setter Property="Background" Value="#ffa534"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=RateSlider, Path=Value}" Value="3">
+                <Setter Property="Background" Value="#ffe234"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=RateSlider, Path=Value}" Value="4">
+                <Setter Property="Background" Value="#b7dd29"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=RateSlider, Path=Value}" Value="5">
+                <Setter Property="Background" Value="#24FF0C"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Триггер события-->
+    <Style x:Key="EventTriggerStyle" TargetType="Button">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Height" To="28"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Height" To="25"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

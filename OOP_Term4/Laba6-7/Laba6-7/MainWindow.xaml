@@ -1,0 +1,243 @@
+﻿<Window x:Class="Laba6_7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba6_7"
+        mc:Ignorable="d"
+        Height="800" MinHeight="800" MinWidth="1000" Width="1150" 
+        Icon="Images\bike.png" Title="Wind Breaker">
+
+    <Window.Resources>
+        <!--<Style TargetType="{x:Type Button}" x:Key="ButtonStyle1">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="D:\ООП\OOP_Course2_Term2\Laba6-7\Laba6-7\Cursors\hand.cur" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+                
+        <ControlTemplate x:Key="MenuItemTemplate" TargetType="MenuItem">
+            <StackPanel Orientation="Horizontal" Name="SearchStackPanel">
+                <TextBox Width="300" FontSize="14" Padding="2" Name="SearchTextBox"/>
+                <Border BorderBrush="#000099" BorderThickness="1">
+                    <Button Width="24" Height="24" Name="SearchTextButton" 
+                            MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"
+                               Click="SearchTextButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Images/search_icon.png"
+                                    Stretch="Uniform" Viewport="0.2, 0.2, 0.6, 0.6"/>
+                        </Button.Background>
+                    </Button>
+                </Border>
+            </StackPanel>
+        </ControlTemplate>
+
+    </Window.Resources>
+
+    <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
+    <StackPanel>
+        <!-- Лого (размещаю его на полотне для возможности выхода за границы верхнего меню) -->
+        <Canvas Panel.ZIndex="2" HorizontalAlignment="Stretch">
+            <TextBlock Text="Wind Breaker" Padding="0 0 10 0" Panel.ZIndex="2" Canvas.Right="0"
+                      FontSize="45" FontFamily="Roboto Mono" FontWeight="Bold" >
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#00008b" Offset="0"/>
+                        <GradientStop Color="#8a2be2" Offset="0.4"/>
+                        <GradientStop Color="#8a2be2" Offset="0.6"/>
+                        <GradientStop Color="#00008b" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Canvas>
+
+        <!-- Меню -->
+        <Menu Padding="5" FontSize="18" Background="Lavender">
+
+            <!--Ради того, чтобы сместить лого вправо-->
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+
+            <!-- Смена языка -->
+            <MenuItem Name="LangMenuItem" Header="{DynamicResource Lang}" Margin="15 0 30 0">
+                <MenuItem Name="EngLangMenuItem" Header="{DynamicResource LangEng}" Command="{Binding SwitchLangEngCommand}" 
+                          MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+                <MenuItem Name="RusLangMenuItem" Header="{DynamicResource LangRus}" Command="{Binding SwitchLangRusCommand}"
+                          MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+            </MenuItem>
+
+            <!-- Поиск -->
+            <MenuItem Name="SearchMenuItem" Template="{StaticResource MenuItemTemplate}"/>
+
+
+        </Menu>
+        <!-- Вывод информации о товарах и возможность добавить новый товар -->
+            <Border Padding="15" Name="InfoBorder">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Background="#C8BAF8" Grid.Column="0" Grid.Row="0"> 
+                        <!--Добавить новый товар-->
+                        <Button Click="OpenAddGoodWindow"
+                                MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"
+                                Padding="3 5" Margin="10 10 10 20" FontSize="17" Name="AddButton" Background="#8D79D7">
+                                <TextBlock Text="{DynamicResource AddNewGood}" TextWrapping="Wrap" 
+                                               TextAlignment ="Center"/>
+                        </Button>
+
+                        <!--Сортировка-->
+                    <TextBlock Text="{DynamicResource Order}" FontWeight="Bold" HorizontalAlignment="Center" FontSize="18"/>
+                    <Border Padding="10">
+                        <StackPanel>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="PriceDescRadioButton" 
+                                         Content="{DynamicResource PriceDesc}"/>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="PriceAscRadioButton" 
+                                         Content="{DynamicResource PriceAsc}"/>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="NameAlphabeticallyRadioButton" 
+                                         Content="{DynamicResource NameAlphabetically}"/>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="NameReverseAlphabeticallyRadioButton"
+                                         Content="{DynamicResource NameReverseAlphabetically}"/>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="RateDescRadioButton"
+                                         Content="{DynamicResource RateDesc}"/>
+                            <RadioButton Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         GroupName="OrderGroup" Name="RateAscRadioButton"
+                                         Content="{DynamicResource RateAsc}"/>
+                        </StackPanel>
+                    </Border>
+
+                        <!--По категориям-->
+                    <TextBlock Text="{DynamicResource FilterCategory}" FontWeight="Bold" HorizontalAlignment="Center" FontSize="18"/>
+                    <Border Padding="10">
+                        <StackPanel>
+                            <CheckBox  Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         Content="{DynamicResource Bicycles}"
+                                         Name="BicyclesFilterCheckBox"/>
+                            <CheckBox  Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         Content="{DynamicResource Accessories}"
+                                         Name="AccessoriesFilterCheckBox"/>
+                            <CheckBox  Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         Content="{DynamicResource CyclingClothing}"
+                                         Name="CyclingClothingFilterCheckBox"/>
+                            <CheckBox  Background="Transparent" FontSize="16" Margin="0 0 0 7"
+                                         Content="{DynamicResource Parts}"
+                                         Name="PartsFilterCheckBox"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Button Content="{DynamicResource Apply}" Name="ApplyButton" 
+                                    Padding="7" FontSize="16" FontWeight="Bold" Background="#A2AEF7"
+                                    Click="ApplyButton_Click" Margin="10 20 "
+                                    MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+
+                    <Button Content="{DynamicResource ResetAll}" Name="ResetAllButton"
+                            Padding="7" FontSize="16" FontWeight="Bold" Background="#8D9DF9" 
+                            Margin="10 0" Click="ResetAllButton_Click"
+                            MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+
+                    <Button Content="{DynamicResource Refresh}" Name="RefreshButton"
+                            Padding="7" FontSize="16" FontWeight="Bold" Background="#B20AE5" 
+                            Margin="10 60 10 0" Click="RefreshButton_Click"
+                            MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+
+                </StackPanel>
+
+
+                    <Grid Grid.Column="1" Grid.Row="0" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="400"/>
+                            <RowDefinition Height="300"/>
+                        </Grid.RowDefinitions>
+
+                    <ListBox Name="GoodsListBox" Background="Lavender" Grid.Row="0" 
+                             IsSynchronizedWithCurrentItem="True" Margin="10 0 0 0" FontSize="16" 
+                             ScrollViewer.CanContentScroll="False">
+                            <ListBox.ItemTemplate >
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                                    <Image Width="150" Height="150" Source="{Binding Path=ImagePath}" />
+                                        <StackPanel Margin="40 0 30 0">
+                                            <TextBlock Text="{DynamicResource ID}" FontWeight="Bold"/>
+                                            <TextBlock Text="{DynamicResource Name}" FontWeight="Bold"/>
+                                            <TextBlock Text="{DynamicResource Category}" FontWeight="Bold"/>
+                                            <TextBlock Text="{DynamicResource Rate}" FontWeight="Bold"/>
+                                            <TextBlock Text="{DynamicResource Price}" FontWeight="Bold"/>
+                                            <TextBlock Text="{DynamicResource Amount}" FontWeight="Bold"/>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Path=ID}"/>
+                                            <TextBlock Text="{Binding Path=Name}" />
+                                            <TextBlock Text="{Binding Path=Category}" />
+                                            <TextBlock Text="{Binding Path=Rate}" />
+                                            <TextBlock Text="{Binding Path=Price}" />
+                                            <TextBlock Text="{Binding Path=Amount}" />
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <!--Синхронизируется с ListBox и в зависимости от выбранного пункта выводит данные-->
+                    <ContentControl Grid.Row="1" FontSize="20" Margin="10 20 0 0" HorizontalAlignment="Stretch"
+                                    Content="{Binding ElementName=GoodsListBox, Path=ItemsSource}" 
+                                    Name="InfoContentControl">
+                            <ContentControl.ContentTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Width="370" Source="{Binding Path=ImagePath}" VerticalAlignment="Top"/>
+
+                                        <StackPanel Margin="40 0 30 0">
+                                            <TextBlock Text="{DynamicResource ID}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{DynamicResource Name}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{DynamicResource Category}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{DynamicResource Rate}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{DynamicResource Price}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{DynamicResource Amount}" FontWeight="Bold" Margin="0 0 0 5"/>
+                                        </StackPanel>
+
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Path=ID}" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{Binding Path=Name}" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{Binding Path=Category}" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{Binding Path=Rate}" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{Binding Path=Price}" Margin="0 0 0 5"/>
+                                            <TextBlock Text="{Binding Path=Amount}" Margin="0 0 0 5"/>
+                                        </StackPanel>
+                                </StackPanel>
+                                </DataTemplate>
+                            </ContentControl.ContentTemplate>
+                        </ContentControl>
+
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                Orientation="Horizontal">
+                        <Button Content="{DynamicResource Edit}" Padding="10" FontSize="24" Name="EditButton"
+                                            Background="#FD4EFF" Click="EditButton_Click" Margin="0 0 30 0"
+                                            MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+                        <Button Content="{DynamicResource Delete}" Padding="10" FontSize="24" Name="DeleteButton"
+                                            Background="#FD4EFF" Click="DeleteButton_Click"
+                                            MouseEnter="ClickableElement_MouseEnter" MouseLeave="ClickableElement_MouseLeave"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            </Border>
+    </StackPanel>
+
+</Window>

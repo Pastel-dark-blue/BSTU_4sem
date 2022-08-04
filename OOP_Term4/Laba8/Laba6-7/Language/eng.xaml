@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Laba6_7.Language"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Окно просмотра списка товаров -->
+    <v:String x:Key="Sort">Sort</v:String>
+    <v:String x:Key="Lang">Language</v:String>
+    <v:String x:Key="LangEng">English</v:String>
+    <v:String x:Key="LangRus">Russian</v:String>
+    <v:String x:Key="Bicycles">Bicycles</v:String>
+    <v:String x:Key="Accessories">Accessories</v:String>
+    <v:String x:Key="CyclingClothing">Cycling clothing</v:String>
+    <v:String x:Key="Parts">Parts</v:String>
+
+    <!--Панель добавления товара, фильтрации и сортировки-->
+    <v:String x:Key="AddNewGood" xml:space="preserve">+    Add new good</v:String>
+    
+    <v:String x:Key="Order">Order</v:String>
+    <v:String x:Key="PriceDesc"> Price descending</v:String>
+    <v:String x:Key="PriceAsc"> Price ascending</v:String>
+    <v:String x:Key="NameAlphabetically"> Name A-Z</v:String>
+    <v:String x:Key="NameReverseAlphabetically"> Name Z-A</v:String>
+    <v:String x:Key="RateDesc"> Rate descending</v:String>
+    <v:String x:Key="RateAsc">Rate ascending</v:String>
+
+    <v:String x:Key="FilterCategory">Filter by category</v:String>
+    <v:String x:Key="FilterPrice">Filter by price</v:String>
+
+    <v:String x:Key="ResetAll">Reset all</v:String>
+    <v:String x:Key="Apply">Apply</v:String>
+    <v:String x:Key="Refresh">Refresh</v:String>
+
+    <!-- Окно добавления товара -->
+    <v:String x:Key="GoodWindowTitle">Good</v:String>
+    <v:String x:Key="ID">Id</v:String>
+    <v:String x:Key="Name">Product Name</v:String>
+    <v:String x:Key="Category">Category</v:String>
+    <v:String x:Key="Rate">Rate</v:String>
+    <v:String x:Key="Price">Price, $</v:String>
+    <v:String x:Key="Amount">Amount</v:String>
+    <v:String x:Key="AddImage">Add Image</v:String>
+    <v:String x:Key="DeleteImage">Delete image</v:String>
+    <v:String x:Key="Save">Save</v:String>
+    <v:String x:Key="Error">Correct the mistakes</v:String>
+    <v:String x:Key="Saved">Saved</v:String>
+
+    <!--Редактирование и удаление товара-->
+    <v:String x:Key="Edit">Edit</v:String>
+    <v:String x:Key="Delete">Delete</v:String>
+
+
+</ResourceDictionary>

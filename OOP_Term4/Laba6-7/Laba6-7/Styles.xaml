@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="GoodsItemsTextBoxStyle" TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="#000099"/>
+        <Setter Property="Padding" Value="2"/>
+
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="GoodsItemsComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="BorderBrush" Value="#000099"/>
+        <Setter Property="Padding" Value="2"/>
+
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ListBoxItemsBorder" TargetType="Border">
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="BorderBrush" Value="red" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,83 @@
+﻿<UserControl x:Class="Laba9.UserControls.PersonUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Laba9.UserControls"
+             
+             xmlns:personClass="clr-namespace:Laba9.Classes"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <!--Стиль TextBlock-->
+        <Style TargetType="TextBlock" x:Key="TextBlockStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 0 0 15"/>
+        </Style>
+
+        <!--Стиль TextBox-->
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 0 0 15"/>
+        </Style>
+
+        <!-- Ресурс - класс Person со свойствами зависимостей -->
+        <personClass:Person x:Key="personClass"/>
+    </UserControl.Resources>
+    
+    <Border Padding="10">
+        <Grid DataContext="{StaticResource personClass}">
+            <StackPanel>
+                <StackPanel VerticalAlignment="Top" Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Имя" Grid.Column="0"/>
+                        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Column="1" Text="{Binding Name}" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Фамилия" Grid.Column="0"/>
+                        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Column="1" Text="{Binding Surname}"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Top" Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Дата рождения" Grid.Column="0"/>
+                        <TextBox Style="{StaticResource TextBoxStyle}" Grid.Column="1" Text="{Binding BirthDate}"/>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+            
+            <Button Content="Сохранить" Padding="0 7"  FontSize="18" Name="SaveButton"
+                    Background="#FFD100" BorderThickness="0" VerticalAlignment="Bottom"
+                    Click="SaveButton_Click"/>
+            
+            <Popup Name="SavePopup" AllowsTransparency="True" PlacementTarget="{Binding ElementName=SaveButton}" Placement="Top">
+                <TextBlock Text="Сохранено" Opacity="0.7" Background="#4EE92F" Foreground="Black" FontSize="16"/>
+            </Popup>
+
+        </Grid>
+    </Border>
+    
+</UserControl>

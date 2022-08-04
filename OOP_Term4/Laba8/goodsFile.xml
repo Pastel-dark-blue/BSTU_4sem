@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ArrayOfGood xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Good>
+    <ID>1</ID>
+    <Name>Muc-Off Bike Cleaner</Name>
+    <Category>Accessories</Category>
+    <Rate>4</Rate>
+    <Price>8.99</Price>
+    <Amount>13</Amount>
+    <ImagePath>D:\ООП\OOP_Course2_Term2\Laba6-7\Muc-Off Bike Cleaner.jpg</ImagePath>
+  </Good>
+  <Good>
+    <ID>2</ID>
+    <Name>CUBE KATHMANDU SL - Trekking Bike - 2022 - storm/black A00</Name>
+    <Category>Bicycles</Category>
+    <Rate>4</Rate>
+    <Price>2</Price>
+    <Amount>0</Amount>
+    <ImagePath>D:\ООП\OOP_Course2_Term2\Laba6-7\CUBE KATHMANDU SL - Trekking Bike - 2022 - storm black A00.jpg</ImagePath>
+  </Good>
+  <Good>
+    <ID>11</ID>
+    <Name>Shimano SPD PD-EH500 Pedals</Name>
+    <Category>Parts</Category>
+    <Rate>4</Rate>
+    <Price>68</Price>
+    <Amount>22</Amount>
+    <ImagePath>D:\ООП\OOP_Course2_Term2\Laba6-7\Shimano SPD PD-EH500 Pedals.jpg</ImagePath>
+  </Good>
+  <Good>
+    <ID>3</ID>
+    <Name>Zipp 303 Firecrest® Carbon Disc Tubeless Sram/Shimano Wheelset</Name>
+    <Category>Parts</Category>
+    <Rate>4</Rate>
+    <Price>1499</Price>
+    <Amount>3</Amount>
+    <ImagePath>D:\ООП\OOP_Course2_Term2\Laba6-7\Zipp 303 Firecrest Carbon Disc Tubeless Sram Shimano Wheelset.jpg</ImagePath>
+  </Good>
+  <Good>
+    <ID>6</ID>
+    <Name>M-Wave Bella C-Yell Mini Bike Bell</Name>
+    <Category>Parts</Category>
+    <Rate>5</Rate>
+    <Price>8.99</Price>
+    <Amount>54</Amount>
+    <ImagePath>D:\ООП\OOP_Course2_Term2\Laba6-7\M-Wave Bella C-Yell Mini Bike Bell.jpg</ImagePath>
+  </Good>
+</ArrayOfGood>

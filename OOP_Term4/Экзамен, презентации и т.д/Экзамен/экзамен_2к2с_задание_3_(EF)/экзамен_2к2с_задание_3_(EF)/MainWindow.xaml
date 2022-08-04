@@ -1,0 +1,49 @@
+﻿<Window x:Class="экзамен_2к2с_задание_3__EF_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:экзамен_2к2с_задание_3__EF_"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Border Padding="20 0 20 20" Grid.Row="0">
+            <DataGrid GridLinesVisibility="All" Name="GoodsDataGrid" FontSize="16" AutoGenerateColumns="False"
+                      Background="#E7F6EF" IsSynchronizedWithCurrentItem="True" 
+                             ScrollViewer.CanContentScroll="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" x:Name="Name"/>
+                    <DataGridTextColumn Binding="{Binding Width_cm}" Header="Width, cm" x:Name="Width"/>
+                    <DataGridTextColumn Binding="{Binding Height_cm}" Header="Height, cm" x:Name="Height"/>
+                    <DataGridTextColumn Binding="{Binding Length_cm}" Header="Length, cm" x:Name="Length"/>
+                    <DataGridTextColumn Binding="{Binding Weight_kg}" Header="Weight, kg" x:Name="Weight"/>
+                    <DataGridTextColumn Binding="{Binding Type}" Header="Type" x:Name="Type"/>
+                    <DataGridTextColumn Binding="{Binding Date}" Header="Date" x:Name="Date"/>
+                    <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" x:Name="Amount"/>
+                    <DataGridTextColumn Binding="{Binding Price__}" Header="Price, $" x:Name="Price"/>
+                    <DataGridTextColumn Binding="{Binding ManufacturerId}" Header="Manufacturer Id" x:Name="ManufacturerId"/>
+
+                    <DataGridTemplateColumn Header="Photo" Width="150">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Photo}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBox MinWidth="300" FontSize="24" VerticalContentAlignment="Center" Name="searchTxtBox" 
+                     Text="Товар с самой низкой ценой" Padding="20"/>
+            <Button Width="100" Name="button" Click="button_Click" Content="Найти" FontSize="24"/>
+            <Button Width="100" Name="button2" Click="button2_Click" Content="Отмена" FontSize="24"/>
+        </StackPanel>
+    </Grid>
+</Window>

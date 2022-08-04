@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="GridViewDataTempl" >
+        <ListView>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="{DynamicResource ID}" DisplayMemberBinding="{Binding XPath=ID}"/>
+                    <GridViewColumn Header="{DynamicResource Name}" DisplayMemberBinding="{Binding XPath=Name}"/>
+                    <GridViewColumn Header="{DynamicResource Category}" DisplayMemberBinding="{Binding XPath=Category}"/>
+                    <GridViewColumn Header="{DynamicResource Rate}" DisplayMemberBinding="{Binding XPath=Rate}"/>
+                    <GridViewColumn Header="{DynamicResource Price}" DisplayMemberBinding="{Binding XPath=Price}"/>
+                    <GridViewColumn Header="{DynamicResource Amount}" DisplayMemberBinding="{Binding XPath=Amount}"/>
+                    <GridViewColumn Header="{DynamicResource Name}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding XPath=ImagePath}" Width="120" Height="120"></Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DataTemplate>
+    
+</ResourceDictionary>
+
+<!--<DataTemplate x:Key="GridViewDataTempl" >
+    <ListView>
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="{DynamicResource ID}" DisplayMemberBinding="{Binding XPath=ID}"/>
+                <GridViewColumn Header="{DynamicResource Name}" DisplayMemberBinding="{Binding XPath=Name}"/>
+                <GridViewColumn Header="{DynamicResource Category}" DisplayMemberBinding="{Binding XPath=Category}"/>
+                <GridViewColumn Header="{DynamicResource Rate}" DisplayMemberBinding="{Binding XPath=Rate}"/>
+                <GridViewColumn Header="{DynamicResource Price}" DisplayMemberBinding="{Binding XPath=Price}"/>
+                <GridViewColumn Header="{DynamicResource Amount}" DisplayMemberBinding="{Binding XPath=Amount}"/>
+                <GridViewColumn Header="{DynamicResource Name}" >
+                    <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding XPath=ImagePath}" Width="120" Height="120"></Image>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+            </GridView>
+        </ListView.View>
+    </ListView>
+</DataTemplate>-->

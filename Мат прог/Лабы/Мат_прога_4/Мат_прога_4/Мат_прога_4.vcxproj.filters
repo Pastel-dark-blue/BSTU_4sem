@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="levenshtein">
+      <UniqueIdentifier>{27436dbc-8481-4322-8d4a-9b532fabb805}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="randomizer">
+      <UniqueIdentifier>{8685a104-a48e-4982-b6e2-eaddea7e9d9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Matrix">
+      <UniqueIdentifier>{cb7a431c-8c4b-4c56-b928-5c10357d4630}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Мат_прога_4.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Levenshtein.cpp">
+      <Filter>levenshtein</Filter>
+    </ClCompile>
+    <ClCompile Include="main_levenshtein.cpp">
+      <Filter>levenshtein</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>randomizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Matrix</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Levenshtein.h">
+      <Filter>levenshtein</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>randomizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Matrix</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ArrayOfGood xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Good>
+    <manufacturer>
+      <Org>sdf</Org>
+      <Country>Россия</Country>
+      <Phone>(42)343-43-43</Phone>
+      <Region>ffd</Region>
+      <District>sdf</District>
+      <City>sad</City>
+      <Street>asd</Street>
+      <House>22</House>
+    </manufacturer>
+    <Name>afddf</Name>
+    <Number>21</Number>
+    <Width>32</Width>
+    <Height>21</Height>
+    <Length>11</Length>
+    <Weight>0.002</Weight>
+    <Type>потребительский</Type>
+    <Date>26.03.2022</Date>
+    <Amount>100</Amount>
+    <Price>1</Price>
+  </Good>
+</ArrayOfGood>

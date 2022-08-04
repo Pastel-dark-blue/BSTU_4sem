@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Laba6_7.UserControls.switchThemeUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Laba6_7.UserControls"
+             mc:Ignorable="d"              
+             d:DesignHeight="25" d:DesignWidth="75">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="StaticButton" TargetType="Button">
+            <ContentControl Content="{TemplateBinding Content}"/>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Canvas>
+        <Button Template="{StaticResource StaticButton}" Command="{Binding SwitchLightThemeCommand}" 
+                    Canvas.Left="0" Height="25"
+                    Style="{StaticResource EventTriggerStyle}">
+            <Image Source="\Images\sun.png" />
+        </Button>
+
+        <Button Template="{StaticResource StaticButton}" Command="{Binding SwitchDarkThemeCommand}" 
+                    Canvas.Left="50" Height="25"
+                    Style="{StaticResource EventTriggerStyle}">
+            <Image Source="\Images\moon.png" />
+        </Button>
+    </Canvas>
+</UserControl>

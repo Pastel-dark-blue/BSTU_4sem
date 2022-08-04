@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<ArrayOfGood xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Good>
+    <ID>54</ID>
+    <Name>3</Name>
+    <Category>Аксессуары</Category>
+    <Rate>4</Rate>
+    <Price>43</Price>
+    <Amount>3</Amount>
+  </Good>
+  <Good>
+    <ID>99</ID>
+    <Name />
+    <Category>Велосипеды</Category>
+    <Rate>1</Rate>
+    <Price>99</Price>
+    <Amount>0</Amount>
+  </Good>
+</ArrayOfGood>

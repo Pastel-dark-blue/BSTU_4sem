@@ -1,0 +1,154 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Светлая тема-->
+    
+    <!--ГЛАВНОЕ ОКНО-->
+    <!--Окно-->
+    <Style x:Key="WindowTheme" TargetType="Window">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <!--Лого-->
+    <Style x:Key="LogoTheme" TargetType="TextBlock">
+        <Setter Property="TextBlock.Foreground">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00008b" Offset="0"/>
+                    <GradientStop Color="#8a2be2" Offset="0.4"/>
+                    <GradientStop Color="#8a2be2" Offset="0.6"/>
+                    <GradientStop Color="#00008b" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Меню-->
+    <Style x:Key="MenuTheme" TargetType="Menu">
+        <Setter Property="Background" Value="Lavender"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <Style x:Key="MenuItemTheme" TargetType="MenuItem">
+        <Setter Property="Background" Value="#A2AEF7"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <!--Панель слева (с добавлением нового товара, фильтрацией и т.д.)-->
+    <Style x:Key="LeftStackPanelTheme" TargetType="StackPanel">
+        <Setter Property="Background" Value="#C8BAF8"/>
+    </Style>
+
+    <Style x:Key="RadioButtonTheme" TargetType="RadioButton">
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <Style x:Key="CheckBoxTheme" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <!--Кнопка добавления товара-->
+    <Style x:Key="AddButtonTheme" TargetType="Button">
+        <Setter Property="Background" Value="#8D79D7"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Кнопка "Применить"-->
+    <Style x:Key="ApplyButtonTheme" TargetType="Button">
+        <Setter Property="Background" Value="#A2AEF7"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Кнопка "Сбросить"-->
+    <Style x:Key="ResetAllButtonTheme" TargetType="Button">
+        <Setter Property="Background" Value="#8D9DF9"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Кнопка "Обновить"-->
+    <Style x:Key="RefreshButtonTheme" TargetType="Button">
+        <Setter Property="Background" Value="#B20AE5"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Кнопки редактирования и удаления-->
+    <Style x:Key="EditDelButtonsTheme" TargetType="Button">
+        <Setter Property="Background" Value="#FD4EFF"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Список товаров-->
+    <Style x:Key="ListBoxTheme" TargetType="ListBox">
+        <Setter Property="Background" Value="Lavender"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <!--ОКНО ТОВАРА (добавление и редактирование)-->
+    <!--Окно-->
+    <Style x:Key="GoodWindowTheme" TargetType="Window">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+    
+    <!--ComboBox со списком категорий-->
+    <Style x:Key="GoodsItemsComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="BorderBrush" Value="#000099"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Background" Value="#000099"/>
+
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="ComboBoxItemTheme" TargetType="ComboBoxItem">
+        <Setter Property="Background" Value="Lavender"/>
+    </Style>
+    
+    <!--TextBox ввода информации о товарах-->
+    <Style x:Key="GoodsItemsTextBoxStyle" TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="#000099"/>
+        <Setter Property="Padding" Value="2"/>
+
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--Прямоугольник на месте для картинки-->
+    <Style x:Key="RectangleTheme" TargetType="Rectangle">
+        <Setter Property="Fill" Value="#e6e6ff"/>
+    </Style>
+    
+    <!--Кнопки добавления и удаления изображения-->
+    <Style x:Key="ImageButtonTheme" TargetType="Border">
+        <Setter Property="Background" Value="#e6e6ff"/>
+        <Setter Property="BorderBrush" Value="#ccccff"/>
+        <Setter Property="TextBlock.Foreground" Value="#000066"/>
+    </Style>
+    
+    <!--Кнопка "Сохранить"-->
+    <Style x:Key="SaveButtonTheme" TargetType="Button">
+        <Setter Property="Background" Value="#ccccff"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!--Слайдер (риски внизу)-->
+    <Style x:Key="SliderTheme" TargetType="Slider">
+        <Setter Property="Foreground" Value="#000099"/>
+    </Style>
+
+</ResourceDictionary>

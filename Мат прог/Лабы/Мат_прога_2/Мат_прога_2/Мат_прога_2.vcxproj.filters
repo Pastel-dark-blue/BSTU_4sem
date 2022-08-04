@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="2 %28Генератор сочетаний%29">
+      <UniqueIdentifier>{38737e8c-c52c-41a0-b1ef-77f3d4a0580e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1 %28Генератор подмножеств%29">
+      <UniqueIdentifier>{a09dcf76-1a2e-4b7f-bc3e-f527e88a876d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3 %28Генератор размещений%29">
+      <UniqueIdentifier>{f83fc6d4-ce3d-4a56-bdd3-7b134cf39c7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4 %28Генератор размещений%29">
+      <UniqueIdentifier>{d857dedc-692b-4eef-afc2-44cc58894f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5 %28задача об оптимальной загрузке судна с условием центровки%29">
+      <UniqueIdentifier>{aec27c13-725c-4a0e-9448-335e93b818e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="5 %28задача об оптимальной загрузке судна с условием центровки%29\Генерация псевдослучайных чисел">
+      <UniqueIdentifier>{5c3fb691-ea4d-4cc1-8797-17f1cc5ebf3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Combi1.h">
+      <Filter>1 %28Генератор подмножеств%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Combi2.h">
+      <Filter>2 %28Генератор сочетаний%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Combi3.h">
+      <Filter>3 %28Генератор размещений%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Combi4.h">
+      <Filter>4 %28Генератор размещений%29</Filter>
+    </ClInclude>
+    <ClInclude Include="BoatC.h">
+      <Filter>5 %28задача об оптимальной загрузке судна с условием центровки%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Auxil.h">
+      <Filter>5 %28задача об оптимальной загрузке судна с условием центровки%29\Генерация псевдослучайных чисел</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Combi1.cpp">
+      <Filter>1 %28Генератор подмножеств%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Combi2.cpp">
+      <Filter>2 %28Генератор сочетаний%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Combi3.cpp">
+      <Filter>3 %28Генератор размещений%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Combi4.cpp">
+      <Filter>4 %28Генератор размещений%29</Filter>
+    </ClCompile>
+    <ClCompile Include="BoatC.cpp">
+      <Filter>5 %28задача об оптимальной загрузке судна с условием центровки%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Auxil.cpp">
+      <Filter>5 %28задача об оптимальной загрузке судна с условием центровки%29\Генерация псевдослучайных чисел</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

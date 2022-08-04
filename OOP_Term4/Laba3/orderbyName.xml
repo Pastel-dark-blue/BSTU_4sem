@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ArrayOfGood xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Good>
+    <Name>второй</Name>
+    <Number>79</Number>
+    <Width>990.09</Width>
+    <Height>6</Height>
+    <Length>88</Length>
+    <Weight>0.00055</Weight>
+    <Type>промышленный</Type>
+    <Date>25.03.2022</Date>
+    <Amount>211</Amount>
+    <Price>777</Price>
+  </Good>
+  <Good>
+    <manufacturer>
+      <Org>орг один</Org>
+      <Country>Россия</Country>
+      <Phone>(87)787-87-87</Phone>
+      <Region>обл один</Region>
+      <District>р один</District>
+      <City>городдд</City>
+      <Street>ул</Street>
+      <House>12</House>
+    </manufacturer>
+    <Name>первый</Name>
+    <Number>77</Number>
+    <Width>990.09</Width>
+    <Height>6</Height>
+    <Length>88</Length>
+    <Weight>0.00055</Weight>
+    <Type>потребительский</Type>
+    <Date>10.03.2022</Date>
+    <Amount>1</Amount>
+    <Price>777</Price>
+  </Good>
+</ArrayOfGood>
